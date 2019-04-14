@@ -34,14 +34,14 @@ public class Main {
         g.agregarArista(10, 13);
         g.agregarArista(10, 14);
         
-        /*if(g.busquedaBidireccional(s, t)){
+        if(g.busquedaBidireccional(s, t)){
             //System.out.println("Existe camino");
-        }*/
-        int res = g.algorithmBidirectional(s, t);
+        }
+        /*int res = g.algorithmBidirectional(s, t);
         if(res != -1){
             System.out.println("Existe Camino "+res);
         }else{
             System.out.println("Falla");
-        }
+        }*/
     }
 }

@@ -93,7 +93,12 @@ public class Grafo {
             nodoInterseccion = hayInterseccion(s_visitados, t_visitados);
             if (nodoInterseccion != -1) {
                 System.out.printf("Camino entre %d y %d es %d\n", s, t, nodoInterseccion);
-                getPath(s_padres, t_padres, s, t, nodoInterseccion);
+                LinkedList<Integer> path = getPath(s_padres, t_padres, s, t, nodoInterseccion);
+                System.out.println(path.size());
+                for(int act : path){
+                    System.out.printf("%d ",act);
+                }
+                System.out.println();
                 respuesta = true;
                 break;
             }

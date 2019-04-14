@@ -27,7 +27,6 @@ public class NewMain {
                 break;
             }
             g.agregarArista(a, b);
-            //System.out.println("vertice agregdo");
         }
         System.out.println("Ingrese nodo s y t");
         sc = new Scanner(System.in);

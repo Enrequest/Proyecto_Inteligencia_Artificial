@@ -13,23 +13,24 @@ import java.util.*;
 import java.io.*;
 
 public class NewMain {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese cantidad de vertices");
-        int n = sc.nextInt();
+    public static void main(String[] args)throws Exception {
+        Scanner sc = new Scanner(new FileReader("DatosMapa.txt"));
+        //System.out.println("Ingrese cantidad de vertices");
+        int n = 63; //sc.nextInt();
         Grafo g = new Grafo(n);
-        System.out.println("Ingresando vertices, para cancelar escriba 0 0");
+        System.out.println("Ingresando vertices, para cancelar escriba -1 -1");
         while(true){
             int a = sc.nextInt();
             int b = sc.nextInt();
-            if(a==0 && b==0){
+            if(a==-1 && b==-1){
                 System.out.println("Insercion de vertices terminado");
                 break;
             }
             g.agregarArista(a, b);
-            System.out.println("vertice agregdo");
+            //System.out.println("vertice agregdo");
         }
         System.out.println("Ingrese nodo s y t");
+        sc = new Scanner(System.in);
         int s = sc.nextInt();
         int t = sc.nextInt();
         System.out.println("El camino usando la busqueda bidireccional es:");

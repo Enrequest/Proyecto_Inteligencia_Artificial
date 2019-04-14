@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.*;
 
 public class Grafo {
-
+    
     int vertices;
     LinkedList<Integer> listaAdyArr[];
     boolean visitados[];
@@ -112,6 +112,12 @@ public class Grafo {
         LinkedList<Integer> ClosedF = new LinkedList<>();
         LinkedList<Integer> ClosedB = new LinkedList<>();
         
+        int s_parent[] = new int[vertices];
+        int t_parent[] = new int[vertices];
+        
+        s_parent[s] = -1;
+        t_parent[t] = -1;
+        
         OpenF.add(s);
         OpenB.add(t);
         boolean front = true;
@@ -125,12 +131,19 @@ public class Grafo {
                         //continue;
                     } else {
                         if (!OpenF.contains(succ)) {
+                            s_parent[succ] = n;
                             OpenF.add(succ);
                         }
                     }
                     if(OpenB.contains(succ)){
-                       p = succ;
-                       return p;
+                        p = succ;
+                        LinkedList<Integer> path = getPath(s_parent,t_parent,s,t,p); 
+                        System.out.println("Camino encontrado");
+                        for(int act : path){
+                           System.out.printf("%d ",act);
+                        }
+                        System.out.println();
+                        return p;
                     }
                 }
             } else {
@@ -141,11 +154,18 @@ public class Grafo {
                         //continue;
                     }else{
                         if(!OpenB.contains(succ)){
+                            t_parent[succ] = n;
                             OpenB.add(succ);
                         }
                     }
                     if(OpenF.contains(succ)){
                         p = succ;
+                        LinkedList<Integer> path = getPath(s_parent,t_parent,s,t,p); 
+                        System.out.println("Camino encontrado");
+                        for(int act : path){
+                           System.out.printf("%d ",act);
+                        }
+                        System.out.println();
                         return p;
                     }
                 }

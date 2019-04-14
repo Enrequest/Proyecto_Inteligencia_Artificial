@@ -35,7 +35,7 @@ public class Main {
         g.agregarArista(10, 14);
         
         if(g.busquedaBidireccional(s, t)){
-            //System.out.println("Existe camino");
+            System.out.println("Existe camino");
         }
         /*int res = g.algorithmBidirectional(s, t);
         if(res != -1){

@@ -45,11 +45,13 @@ public class Grafo {
         return path;
     }
     
-    public int algorithmBidirectional(int s, int t) {
+    public LinkedList<Integer> algorithmBidirectional(int s, int t) {
         LinkedList<Integer> OpenF = new LinkedList<>();
         LinkedList<Integer> OpenB = new LinkedList<>();
         LinkedList<Integer> ClosedF = new LinkedList<>();
         LinkedList<Integer> ClosedB = new LinkedList<>();
+        
+        LinkedList<Integer> path = new LinkedList<>();//camino resultdo
         
         int s_parent[] = new int[vertices];
         int t_parent[] = new int[vertices];
@@ -76,13 +78,8 @@ public class Grafo {
                     }
                     if(OpenB.contains(succ)){
                         p = succ;
-                        LinkedList<Integer> path = getPath(s_parent,t_parent,s,t,p); 
-                        System.out.println("Camino encontrado");
-                        for(int act : path){
-                           System.out.printf("%d ",act);
-                        }
-                        System.out.println();
-                        return p;
+                        path = getPath(s_parent,t_parent,s,t,p); 
+                        return path;
                     }
                 }
             } else {
@@ -99,18 +96,13 @@ public class Grafo {
                     }
                     if(OpenF.contains(succ)){
                         p = succ;
-                        LinkedList<Integer> path = getPath(s_parent,t_parent,s,t,p); 
-                        System.out.println("Camino encontrado");
-                        for(int act : path){
-                           System.out.printf("%d ",act);
-                        }
-                        System.out.println();
-                        return p;
+                        path = getPath(s_parent,t_parent,s,t,p); 
+                        return path;
                     }
                 }
             }
             front = !front;
         }
-        return -1;
+        return path;
     }
 }

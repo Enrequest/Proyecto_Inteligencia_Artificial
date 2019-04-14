@@ -15,8 +15,7 @@ import java.io.*;
 public class NewMain {
     public static void main(String[] args)throws Exception {
         Scanner sc = new Scanner(new FileReader("DatosMapa.txt"));
-        //System.out.println("Ingrese cantidad de vertices");
-        int n = 63; //sc.nextInt();
+        int n = 63;
         Grafo g = new Grafo(n);
         System.out.println("Ingresando vertices, para cancelar escriba -1 -1");
         while(true){
@@ -33,6 +32,10 @@ public class NewMain {
         int s = sc.nextInt();
         int t = sc.nextInt();
         System.out.println("El camino usando la busqueda bidireccional es:");
-        g.algorithmBidirectional(s, t);
+        LinkedList<Integer> path = g.algorithmBidirectional(s, t);
+        for(int act : path){
+            System.out.printf("%d ",act);
+        }
+        System.out.println();
     }
 }

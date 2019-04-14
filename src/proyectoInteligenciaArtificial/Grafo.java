@@ -49,8 +49,21 @@ public class Grafo {
         return nodoInterseccion;
     }
 
-    public void imprimirCamino(int s_padres[], int t_padres[], int s, int t, int nodoInterseccion) {
-
+    public LinkedList<Integer> getPath(int s_parent[], int t_parent[], int s, int t, int intersectNode) {
+        LinkedList<Integer> path = new LinkedList<Integer>();
+        path.addLast(intersectNode);
+        int i = intersectNode;
+        while(i != s){
+            path.addLast(s_parent[i]);
+            i = s_parent[i];
+        }
+        Collections.reverse(path);
+        i = intersectNode;
+        while(i != t){
+            path.addLast(t_parent[i]);
+            i = t_parent[i];
+        }
+        return path;
     }
 
     public boolean busquedaBidireccional(int s, int t) {
@@ -80,7 +93,7 @@ public class Grafo {
             nodoInterseccion = hayInterseccion(s_visitados, t_visitados);
             if (nodoInterseccion != -1) {
                 System.out.printf("Camino entre %d y %d es %d\n", s, t, nodoInterseccion);
-                imprimirCamino(s_padres, t_padres, s, t, nodoInterseccion);
+                getPath(s_padres, t_padres, s, t, nodoInterseccion);
                 respuesta = true;
                 break;
             }

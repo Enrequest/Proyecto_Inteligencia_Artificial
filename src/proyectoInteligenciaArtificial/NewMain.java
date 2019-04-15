@@ -11,6 +11,7 @@ package proyectoInteligenciaArtificial;
  */
 import java.util.*;
 import java.io.*;
+import javax.swing.JFrame;
 
 public class NewMain {
     public static void main(String[] args)throws Exception {
@@ -52,4 +53,16 @@ public class NewMain {
             j = act;
         }
     }
+}
+class Render extends JFrame {
+	
+	public Render() {
+		setBounds(220, 40, 860, 640);
+		setTitle("Problemas de IA");
+		setResizable(true);
+		Panel panel = new Panel();
+		add(panel);
+		setVisible(true);
+
+	}
 }

@@ -1,18 +1,18 @@
 
 0 1
-Av Melchor Pérez
+Av Melchor Perez
 1 15
-Av Melchor Pérez
+Av Melchor Perez
 15 16
-Av Melchor Pérez
+Av Melchor Perez
 16 22
-Av Melchor Pérez
+Av Melchor Perez
 22 23
-Av Melchor Pérez
+Av Melchor Perez
 23 37
-Av Melchor Pérez
+Av Melchor Perez
 37 49
-Av Melchor Pérez
+Av Melchor Perez
 49 51
 Av Ingavi
 51 53
@@ -40,22 +40,22 @@ Calle R. Rivero Torrez
 58 7
 Av Uyuni
 7 6
-Av América
+Av America
 6 5
-Av América
+Av America
 5 4
-Av América
+Av America
 4 3
-Av América
+Av America
 3 0
 Av Jaime mendoza
 3 2
-Av América
+Av America
 2 0
 Av Gabriel Rene Moreno
 
 2 1
-Av América
+Av America
 
 2 14
 Av Gabriel Rene Moreno
@@ -65,7 +65,7 @@ Av Juan de La Rosa
 14 13
 Av Juan de La Rosa 
 13 17
-Av Carlos Medinacellí
+Av Carlos Medinacelli
 17 16
 Av Tadeo Haenke
 
@@ -84,7 +84,7 @@ Av Blanco Galindo
 24 38
 Av Litoral
 38 37
-Av Capitán Víctor Ustáriz
+Av Capitan Victor Ustariz
 
 38 61
 Av Litoral
@@ -93,9 +93,9 @@ Av Kilometro 7
 42 62
 Av Kilometro 7
 62 39
-Av Capitán Víctor Ustáriz
+Av Capitan Victor Ustariz
 39 38
-Av Capitán Víctor Ustáriz
+Av Capitan Victor Ustariz
 
 39 25
 Av Confederacion
@@ -104,17 +104,17 @@ Av Blanco Galindo
 26 62
 Calle Walter Rocha
 62 40
-Av Capitán Víctor Ustáriz
+Av Capitan Victor Ustariz
 40 50
-Av Beneméritos Del Chaco
+Av Benemeritos Del Chaco
 50 51
-Av Beneméritos Del Chaco
+Av Benemeritos Del Chaco
 
 50 52
 Juana Azurduy
 
 40 41
-Av Capitán Víctor Ustáriz
+Av Capitan Victor Ustariz
 41 52
 Juana Padilla
 
@@ -135,9 +135,9 @@ Av Aroma Av Guillermo Urquidi
 44 29
 Av Ayacucho
 29 46
-Av Heroínas
+Av Heroinas
 46 47
-Av Heroínas
+Av Heroinas
 
 46 45
 Av Oquendo
@@ -149,7 +149,7 @@ Av Papa Paulo
 32 35
 Av Oquendo
 35 34
-Av Ramón Rivero
+Av Ramon Rivero
 34 8
 Av Ruben Dario
 8 7
@@ -165,9 +165,9 @@ Av Melchor Urquidi
 9 10
 Av Uyuni
 10 11
-Av Libertador Simón Bolívar
+Av Libertador Simon Bolï¿½var
 11 4
-Av Libertador Simón Bolívar
+Av Libertador Simon Bolï¿½var
 
 11 12
 Av Juan de la Rosa
@@ -192,7 +192,7 @@ Av Humboldt
 Av Blanco Galindo
 
 27 40
-Av Beneméritos
+Av Benemeritos
 
 27 28
 Punte Quillacollo
@@ -200,7 +200,7 @@ Punte Quillacollo
 Av Rafael Urquidi
 
 28 29
-Av Heroínas
+Av Heroinas
 29 30
 Av Ayacucho
 30 31
@@ -213,7 +213,7 @@ Av Salamanca
 32 59
 Av Papa Paulo
 59 35
-Av Ramón Rivero
+Av Ramon Rivero
 
 59 10
 Av Del Ejercito
@@ -221,7 +221,7 @@ Av Del Ejercito
 Av Ayacucho
 
 10 31
-Av José Ballivian
+Av Jose Ballivian
 
 10 19
 Av Humboldt

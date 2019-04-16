@@ -38,7 +38,7 @@ public class NewMain {
         int s = sc.nextInt();
         int t = sc.nextInt();
         System.out.println("El camino usando la busqueda bidireccional es:");
-        LinkedList<Integer> path = g.algorithmBidirectional(s, t);
+        /*LinkedList<Integer> path = g.algorithmBidirectional(s, t);
         for(int act : path){
             System.out.printf("%d ",act);
         }
@@ -51,15 +51,16 @@ public class NewMain {
             set.add(mapa[i][j]);
             i = j;
             j = act;
-        }
+        }*/
+        Render r = new Render(g);
     }
 }
 class Render extends JFrame {
-	public Render() {
+	public Render(Grafo g) throws Exception {
 		setBounds(220, 40, 860, 640);
 		setTitle("Problemas de IA");
 		setResizable(true);
-		Panel panel = new Panel();
+		Panel panel = new Panel(g);
 		add(panel);
 		setVisible(true);
 	}

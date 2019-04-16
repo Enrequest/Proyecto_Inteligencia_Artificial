@@ -111,19 +111,12 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
 
     @Override
     public void mousePressed(MouseEvent e) {
-        /*
-		 * x0 = e.getX(); y0 = e.getY(); if(ascii-65 < map.mapa.size()) {
-		 * map.mapaCart.put(((char)ascii)+"", new int[]{x0,y0,ascii});
-		 * 
-		 * ascii++; repaint(); }
-         */
     }
 
     @Override
     public void paint(Graphics g) {
         if (primeraVez) {
-            //g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, this);
-            g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, 860, 600, this);
+            //g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, 860, 600, this);
             primeraVez = false;
         }else{
             g.setColor(Color.WHITE); // borar la imagen
@@ -133,35 +126,27 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         }
         for (int[] pos : mapaCart) {
             g.drawOval(pos[0] - 10, pos[1] - 10, 30, 30);
-            //g.drawString(Character.toString(pos[2], pos[0], pos[1] + 10));
             g.drawString(""+pos[2], pos[0], pos[1] + 10);
-            /*for(int s: this.g.listaAdyArr[2]){
-                int x = mapaCart[s][0];
-		int y = mapaCart[s][1];
-		g.drawLine(pos[0], pos[1], x, y);
-            }*/
+
         }
         for(int[] pos : mapaCart){
-            for (int s : this.g.listaAdyArr[pos[2]]/*map.mapa.get(((char) aux[2]) + "")*/) {
-                // System.out.println(s);
-                int x = mapaCart[s][0];//map.mapaCart.get(s)[0];
-                // System.out.println(x);
-                int y = mapaCart[s][1];//map.mapaCart.get(s)[1];
-                // System.out.println(y);
+            for (int s : this.g.listaAdyArr[pos[2]]) {
+                int x = mapaCart[s][0];
+                int y = mapaCart[s][1];
                 g.drawLine(pos[0], pos[1], x, y);
             }
         }
-        /*
-        if (!map.ruta.isEmpty()) {
+        if (!path.isEmpty()) {
             if (pintRuta) {
                 g.setColor(Color.RED);
-                for (int i = 0; i < map.ruta.size() - 1; i++) {
-                    int[] aux1 = map.mapaCart.get(map.ruta.get(i));
-                    int[] aux2 = map.mapaCart.get(map.ruta.get(i + 1));
+                System.out.println("Entra aqui para pintar el camino");
+                for (int i = 0; i < path.size() - 1; i++) {
+                    int[] aux1 = mapaCart[path.get(i)];//.get(map.ruta.get(i));
+                    int[] aux2 = mapaCart[path.get(i+1)];//.get(map.ruta.get(i + 1));
                     g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
                 }
             }
-        }*/
+        }
         paintComponents(g);
     }
 

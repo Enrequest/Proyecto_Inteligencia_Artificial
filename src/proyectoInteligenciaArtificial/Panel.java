@@ -34,6 +34,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     private LinkedList<Integer> path;
     private boolean primeraVez = true;
     int x0, y0, ascii;
+    Scanner sc = new Scanner(new FileReader("Coordenadas.txt"));
 
     public Panel(Grafo g) throws Exception {
         this.g = g;
@@ -84,7 +85,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     }
 
     private void ponerPosicionMapa() throws Exception {
-        Scanner sc = new Scanner(new FileReader("Coordenas.txt"));
+        //Scanner sc = new Scanner(new FileReader("Coordenas.txt"));
         int i = 0;
         while (true) {
             int a = sc.nextInt();

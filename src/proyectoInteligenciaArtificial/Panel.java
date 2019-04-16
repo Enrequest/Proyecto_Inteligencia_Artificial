@@ -35,7 +35,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     private boolean primeraVez = true;
     int x0, y0, ascii;
     
-    private JLabel menCalles;
+    private JTextField menCalles;
     
     
     Scanner sc = new Scanner(new FileReader("Coordenadas.txt"));
@@ -80,7 +80,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         ruta2.setBounds(/*450*/770, 600, 75, 20);
         add(ruta2);
 
-        menCalles = new JLabel("Sin Ruta");
+        menCalles = new JTextField("Sin Ruta");
         menCalles.setBounds(10, 600, 600, 20);
         menCalles.setVisible(true);
         this.add(menCalles);
@@ -157,16 +157,11 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
                 }
             }
         }
-        String str = "";
-        int cont = 0;
+        String str = "  ";
         for(String s: set){
-            if(s.length()-1 != cont){
-                str+=s+", ";
-            }else{
-                str+=s;
-                break;
-            }
+            str+=s+", ";
         }
+        str = str.substring(0, str.length()-2);
         menCalles.setText(str);
         paintComponents(g);
     }

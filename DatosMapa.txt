@@ -1,4 +1,4 @@
-
+﻿
 0 1
 Av Melchor Perez de Olguin
 1 15
@@ -32,7 +32,7 @@ Av Ruben Dario
 48 47
 Av Ruben Dario
 47 33
-Av Reben Dario
+Av Ruben Dario
 33 34
 Av Ruben Dario
 34 58
@@ -165,9 +165,9 @@ Av Melchor Urquidi
 9 10
 Av Uyuni
 10 11
-Av Libertador Simon Bol�var
+Av Libertador Simon Bolivar
 11 4
-Av Libertador Simon Bol�var
+Av Libertador Simon Bolivar
 
 11 12
 Av Juan de la Rosa

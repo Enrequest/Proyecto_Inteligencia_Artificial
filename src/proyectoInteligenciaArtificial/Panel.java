@@ -52,28 +52,28 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
 
     private void dibujarMenu() {
         l1 = new JTextField("");
-        l1.setBounds(270, 500, 75, 20);
+        l1.setBounds(270, 600, 75, 20);
         l1.setVisible(true);
         add(l1);
 
         l2 = new JTextField("");
-        l2.setBounds(350, 500, 75, 20);
+        l2.setBounds(350, 600, 75, 20);
         l2.setVisible(true);
         this.add(l2);
 
         lusuario = new JLabel("inicio");
-        lusuario.setBounds(270, 520, 100, 20);
+        lusuario.setBounds(270, 620, 100, 20);
         lusuario.setVisible(true);
         this.add(lusuario);
 
         lusuario2 = new JLabel("destino");
-        lusuario2.setBounds(350, 520, 100, 20);
+        lusuario2.setBounds(350, 620, 100, 20);
         lusuario2.setVisible(true);
         this.add(lusuario2);
 
         ruta2 = new JButton();
         ruta2.setText(" ok ");
-        ruta2.setBounds(450, 500, 75, 20);
+        ruta2.setBounds(450, 600, 75, 20);
         add(ruta2);
 
         ruta2.setForeground(new java.awt.Color(102, 0, 51));
@@ -122,7 +122,8 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     @Override
     public void paint(Graphics g) {
         if (primeraVez) {
-            g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, this);
+            //g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, this);
+            g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, 860, 600, this);
             primeraVez = false;
         }else{
             // g.setColor(Color.WHITE); // borar la imagen

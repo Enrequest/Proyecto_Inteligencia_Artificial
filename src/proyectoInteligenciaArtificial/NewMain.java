@@ -60,7 +60,7 @@ public class NewMain {
 class Render extends JFrame {
 
     public Render(Grafo g) throws Exception {
-        setBounds(220, 40, 860, 640);
+        setBounds(220, 40, 860, 700);
         setTitle("Problemas de IA");
         setResizable(true);
         Panel panel = new Panel(g);

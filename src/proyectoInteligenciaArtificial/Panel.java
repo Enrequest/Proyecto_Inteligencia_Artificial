@@ -135,17 +135,22 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
             g.drawOval(pos[0] - 10, pos[1] - 10, 30, 30);
             //g.drawString(Character.toString(pos[2], pos[0], pos[1] + 10));
             g.drawString(""+pos[2], pos[0], pos[1] + 10);
+            /*for(int s: this.g.listaAdyArr[2]){
+                int x = mapaCart[s][0];
+		int y = mapaCart[s][1];
+		g.drawLine(pos[0], pos[1], x, y);
+            }*/
         }
-        /*for(int[] pos : mapaCart){
-            for (String s : map.mapa.get(((char) aux[2]) + "")) {
+        for(int[] pos : mapaCart){
+            for (int s : this.g.listaAdyArr[pos[2]]/*map.mapa.get(((char) aux[2]) + "")*/) {
                 // System.out.println(s);
-                int x = map.mapaCart.get(s)[0];
+                int x = mapaCart[s][0];//map.mapaCart.get(s)[0];
                 // System.out.println(x);
-                int y = map.mapaCart.get(s)[1];
+                int y = mapaCart[s][1];//map.mapaCart.get(s)[1];
                 // System.out.println(y);
-                g.drawLine(aux[0], aux[1], x, y);
+                g.drawLine(pos[0], pos[1], x, y);
             }
-        }*/
+        }
         /*
         if (!map.ruta.isEmpty()) {
             if (pintRuta) {

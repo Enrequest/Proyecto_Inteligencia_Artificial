@@ -139,7 +139,6 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         if (!path.isEmpty()) {
             if (pintRuta) {
                 g.setColor(Color.RED);
-                System.out.println("Entra aqui para pintar el camino");
                 for (int i = 0; i < path.size() - 1; i++) {
                     int[] aux1 = mapaCart[path.get(i)];//.get(map.ruta.get(i));
                     int[] aux2 = mapaCart[path.get(i+1)];//.get(map.ruta.get(i + 1));

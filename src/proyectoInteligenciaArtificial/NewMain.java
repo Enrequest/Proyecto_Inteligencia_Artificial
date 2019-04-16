@@ -18,7 +18,6 @@ public class NewMain {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(new FileReader("DatosMapa.txt"));
         int n = 63;
-        String mapa[][] = new String[n][n];
         Grafo g = new Grafo(n);
         System.out.println("Ingresando vertices, para cancelar escriba -1 -1");
         while (true) {
@@ -30,9 +29,7 @@ public class NewMain {
             }
             sc.nextLine();
             String c = sc.nextLine();
-            mapa[a][b] = c;
-            mapa[b][a] = c;
-            g.agregarArista(a, b);
+            g.agregarArista(a, b, c);
         }
         //System.out.println("Ingrese nodo s y t");
         //sc = new Scanner(System.in);

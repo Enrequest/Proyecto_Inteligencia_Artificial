@@ -9,7 +9,10 @@ import java.io.*;
 import java.util.*;
 
 public class Grafo {
-    
+    /*Voy a pecar bastante con esto, espero que los dioses me perdonen*/
+     String mapa[][];
+    //primer pecado
+     
     int vertices;
     LinkedList<Integer> listaAdyArr[];
     boolean visitados[];
@@ -18,12 +21,20 @@ public class Grafo {
         vertices = V;
         listaAdyArr = new LinkedList[V];
         visitados = new boolean[V];
+        //continuo pecando
+        mapa = new String[V][V];
+        //no me culpen estoy cansado
+        
         for (int i = 0; i < V; i++) {
             listaAdyArr[i] = new LinkedList<>();
         }
     }
 
-    public void agregarArista(int origen, int destino) {
+    public void agregarArista(int origen, int destino, String peso) {
+        //
+        mapa[origen][destino] = peso;
+        mapa[destino][origen] = peso;
+        //
         listaAdyArr[origen].add(destino);
         listaAdyArr[destino].add(origen);
     }

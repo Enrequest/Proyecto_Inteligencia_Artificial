@@ -136,12 +136,14 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
                 g.drawLine(pos[0], pos[1], x, y);
             }
         }
+        Set<String> set = new LinkedHashSet<String>();//Aqui se guardan las calles recorridas
         if (!path.isEmpty()) {
             if (pintRuta) {
                 g.setColor(Color.RED);
                 for (int i = 0; i < path.size() - 1; i++) {
-                    int[] aux1 = mapaCart[path.get(i)];//.get(map.ruta.get(i));
-                    int[] aux2 = mapaCart[path.get(i+1)];//.get(map.ruta.get(i + 1));
+                    set.add(this.g.mapa[i][i+1]);
+                    int[] aux1 = mapaCart[path.get(i)];
+                    int[] aux2 = mapaCart[path.get(i+1)];
                     g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
                 }
             }

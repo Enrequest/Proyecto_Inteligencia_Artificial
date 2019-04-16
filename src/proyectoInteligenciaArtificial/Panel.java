@@ -34,6 +34,10 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     private LinkedList<Integer> path;
     private boolean primeraVez = true;
     int x0, y0, ascii;
+    
+    private JLabel menCalles;
+    
+    
     Scanner sc = new Scanner(new FileReader("Coordenadas.txt"));
 
     public Panel(Grafo g) throws Exception {
@@ -52,30 +56,35 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
 
     private void dibujarMenu() {
         l1 = new JTextField("");
-        l1.setBounds(270, 600, 75, 20);
+        l1.setBounds(/*270*/610, 600, 75, 20);
         l1.setVisible(true);
         add(l1);
 
         l2 = new JTextField("");
-        l2.setBounds(350, 600, 75, 20);
+        l2.setBounds(/*350*/690, 600, 75, 20);
         l2.setVisible(true);
         this.add(l2);
 
         lusuario = new JLabel("inicio");
-        lusuario.setBounds(270, 620, 100, 20);
+        lusuario.setBounds(/*270*/610, 620, 100, 20);
         lusuario.setVisible(true);
         this.add(lusuario);
 
         lusuario2 = new JLabel("destino");
-        lusuario2.setBounds(350, 620, 100, 20);
+        lusuario2.setBounds(/*350*/690, 620, 100, 20);
         lusuario2.setVisible(true);
         this.add(lusuario2);
 
         ruta2 = new JButton();
         ruta2.setText(" ok ");
-        ruta2.setBounds(450, 600, 75, 20);
+        ruta2.setBounds(/*450*/770, 600, 75, 20);
         add(ruta2);
 
+        menCalles = new JLabel("Sin Ruta");
+        menCalles.setBounds(10, 600, 600, 20);
+        menCalles.setVisible(true);
+        this.add(menCalles);
+        
         ruta2.setForeground(new java.awt.Color(102, 0, 51));
         ruta2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,13 +150,24 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
             if (pintRuta) {
                 g.setColor(Color.RED);
                 for (int i = 0; i < path.size() - 1; i++) {
-                    set.add(this.g.mapa[i][i+1]);
+                    set.add(this.g.mapa[path.get(i)][path.get(i+1)]);
                     int[] aux1 = mapaCart[path.get(i)];
                     int[] aux2 = mapaCart[path.get(i+1)];
                     g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
                 }
             }
         }
+        String str = "";
+        int cont = 0;
+        for(String s: set){
+            if(s.length()-1 != cont){
+                str+=s+", ";
+            }else{
+                str+=s;
+                break;
+            }
+        }
+        menCalles.setText(str);
         paintComponents(g);
     }
 

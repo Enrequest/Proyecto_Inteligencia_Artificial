@@ -126,8 +126,8 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
             g.drawImage(((new ImageIcon("mapa.jpg")).getImage()), 0, 0, 860, 600, this);
             primeraVez = false;
         }else{
-            // g.setColor(Color.WHITE); // borar la imagen
-            // g.fillRect(0, 0, 860, 640);//
+            g.setColor(Color.WHITE); // borar la imagen
+            g.fillRect(0, 0, 860, 640);//
             g.setColor(Color.BLACK);
             pintRuta = true;
         }

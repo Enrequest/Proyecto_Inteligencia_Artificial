@@ -55,7 +55,6 @@ public class NewMain {
     }
 }
 class Render extends JFrame {
-	
 	public Render() {
 		setBounds(220, 40, 860, 640);
 		setTitle("Problemas de IA");
@@ -63,6 +62,5 @@ class Render extends JFrame {
 		Panel panel = new Panel();
 		add(panel);
 		setVisible(true);
-
 	}
 }

@@ -34,6 +34,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     private LinkedList<Integer> path;
     private boolean primeraVez = true;
     int x0, y0, ascii;
+    private JLabel parques[];
     
     private JTextField menCalles;
     
@@ -41,6 +42,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     Scanner sc = new Scanner(new FileReader("Coordenadas.txt"));
 
     public Panel(Grafo g) throws Exception {
+        parques = new JLabel[6];
         this.g = g;
         ascii = 65;
         path = new LinkedList<Integer>();
@@ -55,6 +57,14 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     }
 
     private void dibujarMenu() {
+        String lisParques[] = {" 0   = Parque Lincold."," 58 = Jardin Botanico."," 59 = Parque de Educacion Vial."," 60 = Parque de la Familia."," 61 = Parque Mariscal Santa Cruz."," 62 = Parque Escuela."};
+        //parques[0] = new JLabel(lisParques);
+        for(int i=0;i<parques.length;i++){
+            parques[i] = new JLabel(lisParques[i]);
+            parques[i].setBounds(/*270*/630, 480+(i*15), 200, 30);
+            parques[i].setVisible(true);
+            this.add(parques[i]);
+        }
         l1 = new JTextField("");
         l1.setBounds(/*270*/610, 600, 75, 20);
         l1.setVisible(true);

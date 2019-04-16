@@ -23,12 +23,14 @@ public class NewMain {
         while (true) {
             int a = sc.nextInt();
             int b = sc.nextInt();
+            System.out.println(a+" "+b);
             if (a == -1 && b == -1) {
                 System.out.println("Insercion de vertices terminado");
                 break;
             }
             sc.nextLine();
             String c = sc.nextLine();
+            System.out.println(c);
             g.agregarArista(a, b, c);
         }
         //System.out.println("Ingrese nodo s y t");

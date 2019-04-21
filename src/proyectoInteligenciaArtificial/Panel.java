@@ -139,19 +139,8 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     public void paint(Graphics g) {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, 860, 640);
-        for (int[] pos : mapaCart){
-            int lincold = 0, botanico = 58, vial = 59, familia = 60, acuatico = 61, escuela = 62;
-            if(pos[2]==lincold||pos[2]==botanico||pos[2]==vial||pos[2]==familia||pos[2]==acuatico||pos[2]==escuela){
-                g.setColor(Color.GREEN);
-                g.drawOval(pos[0] - 10, pos[1] - 10, 30, 30);
-                g.drawString(""+pos[2], pos[0], pos[1] + 10);
-            }else{
-                g.setColor(Color.WHITE);
-                g.drawOval(pos[0] - 10, pos[1] - 10, 30, 30);
-                g.drawString(""+pos[2], pos[0], pos[1] + 10);
-            }
-        }
         g.setColor(Color.WHITE);
+        
         for(int[] pos : mapaCart){
             Graphics2D g1 = (Graphics2D)g;
             g1.setStroke(new BasicStroke(3));
@@ -164,16 +153,30 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         
         Set<String> set = new LinkedHashSet<String>();//Aqui se guardan las calles recorridas
         if (!path.isEmpty()) {
-            //if (pintRuta) {
-                g.setColor(Color.RED);
-                for (int i = 0; i < path.size() - 1; i++) {
-                    set.add(this.g.mapa[path.get(i)][path.get(i+1)]);
-                    int[] aux1 = mapaCart[path.get(i)];
-                    int[] aux2 = mapaCart[path.get(i+1)];
-                    g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
-                }
-            //}
+            g.setColor(Color.RED);
+            for (int i = 0; i < path.size() - 1; i++) {
+                set.add(this.g.mapa[path.get(i)][path.get(i+1)]);
+                int[] aux1 = mapaCart[path.get(i)];
+                int[] aux2 = mapaCart[path.get(i+1)];
+                g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
+            }
         }
+        
+        for (int[] pos : mapaCart){
+            int lincold = 0, botanico = 58, vial = 59, familia = 60, acuatico = 61, escuela = 62;
+            if(pos[2]==lincold||pos[2]==botanico||pos[2]==vial||pos[2]==familia||pos[2]==acuatico||pos[2]==escuela){
+                g.setColor(Color.GREEN);
+                g.fillOval(pos[0]-10, pos[1]-10, 30, 30);
+                g.setColor(Color.BLACK);
+                g.drawString(""+pos[2], pos[0], pos[1] + 10);
+            }else{
+                g.setColor(Color.WHITE);
+                g.fillOval(pos[0] - 10, pos[1] - 10, 30, 30);
+                g.setColor(Color.BLACK);
+                g.drawString(""+pos[2], pos[0], pos[1] + 10);
+            }
+        }
+        
         String str = "  ";
         for(String s: set){
             str+=s+", ";

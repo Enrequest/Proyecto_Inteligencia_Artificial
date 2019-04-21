@@ -31,26 +31,8 @@ public class NewMain {
             String c = sc.nextLine();
             g.agregarArista(a, b, c);
         }
-        //System.out.println("Ingrese nodo s y t");
-        //sc = new Scanner(System.in);
-        //int s = sc.nextInt();
-        //int t = sc.nextInt();
-        //System.out.println("El camino usando la busqueda bidireccional es:");
-        /*LinkedList<Integer> path = g.algorithmBidirectional(s, t);
-        for(int act : path){
-            System.out.printf("%d ",act);
-        }
-        System.out.println();
-
-        Set<String> set = new LinkedHashSet<String>(); 
-        int i = path.removeFirst();
-        int j = path.removeFirst();
-        for(int act: path){
-            set.add(mapa[i][j]);
-            i = j;
-            j = act;
-        }*/
         Render r = new Render(g);
+        r.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
 

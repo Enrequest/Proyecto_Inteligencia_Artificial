@@ -32,7 +32,6 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     private Grafo g; //= new Mapa();
     private int mapaCart[][];
     private LinkedList<Integer> path;
-    private boolean primeraVez = true;
     int x0, y0, ascii;
     private JLabel parques[];
     

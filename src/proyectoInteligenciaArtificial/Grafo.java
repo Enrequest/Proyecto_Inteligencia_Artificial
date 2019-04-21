@@ -10,7 +10,7 @@ import java.util.*;
 
 public class Grafo {
     /*Voy a pecar bastante con esto, espero que los dioses me perdonen*/
-     String mapa[][];
+    String mapa[][];
     //primer pecado
      
     int vertices;

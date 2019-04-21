@@ -19,12 +19,10 @@ public class NewMain {
         Scanner sc = new Scanner(new FileReader("DatosMapa.txt"));
         int n = 63;
         Grafo g = new Grafo(n);
-        System.out.println("Ingresando vertices, para cancelar escriba -1 -1");
         while (true) {
             int a = sc.nextInt();
             int b = sc.nextInt();
             if (a == -1 && b == -1) {
-                System.out.println("Insercion de vertices terminado");
                 break;
             }
             sc.nextLine();
@@ -39,8 +37,8 @@ public class NewMain {
 class Render extends JFrame {
 
     public Render(Grafo g) throws Exception {
-        setBounds(220, 40, 860, 700);
-        setTitle("Problemas de IA");
+        setBounds(220, 40, 870, 700);
+        setTitle("Proyecto 2 Inteligencia Artificial");
         setResizable(true);
         Panel panel = new Panel(g);
         add(panel);

@@ -54,38 +54,35 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         ponerPosicionMapa();
 
     }
-
+    private void ponerJTextField(JTextField text, int x1, int y1, int x2, int y2){
+        text.setBounds(x1, y1, x2, y2);
+        text.setVisible(true);
+        this.add(text);
+    }
+    private void ponerJLabel(JLabel label, int x1, int y1, int x2, int y2, Color color){
+        label.setBounds(x1, y1, x2, y2);
+        label.setVisible(true);
+        label.setForeground(color);
+        this.add(label);
+    }
+    
     private void dibujarMenu() {
         String lisParques[] = {" 0   = Parque Lincold."," 58 = Jardin Botanico."," 59 = Parque de Educacion Vial."," 60 = Parque de la Familia."," 61 = Parque Mariscal Santa Cruz."," 62 = Parque Escuela."};
-        //parques[0] = new JLabel(lisParques);
         for(int i=0;i<parques.length;i++){
             parques[i] = new JLabel(lisParques[i]);
-            parques[i].setBounds(/*270*/630, 480+(i*15), 200, 30);
-            parques[i].setVisible(true);
-            parques[i].setForeground(Color.WHITE);
-            this.add(parques[i]);
+            ponerJLabel(parques[i],630, 480+(i*15), 200, 30, Color.WHITE);
         }
         l1 = new JTextField("");
-        l1.setBounds(/*270*/610, 600, 75, 20);
-        l1.setVisible(true);
-        add(l1);
+        ponerJTextField(l1, 610, 600, 75, 20);
 
         l2 = new JTextField("");
-        l2.setBounds(/*350*/690, 600, 75, 20);
-        l2.setVisible(true);
-        this.add(l2);
+        ponerJTextField(l2, 690, 600, 75, 20);
 
         lusuario = new JLabel("inicio");
-        lusuario.setBounds(/*270*/610, 620, 100, 20);
-        lusuario.setVisible(true);
-        lusuario.setForeground(Color.WHITE);
-        this.add(lusuario);
+        ponerJLabel(lusuario, 610, 620, 100, 20, Color.WHITE);
 
         lusuario2 = new JLabel("destino");
-        lusuario2.setBounds(/*350*/690, 620, 100, 20);
-        lusuario2.setVisible(true);
-        lusuario2.setForeground(Color.WHITE);
-        this.add(lusuario2);
+        ponerJLabel(lusuario2, 690, 620, 100, 20, Color.WHITE);
 
         ruta2 = new JButton();
         ruta2.setText(" ok ");
@@ -93,9 +90,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         add(ruta2);
 
         menCalles = new JTextField("Sin Ruta");
-        menCalles.setBounds(10, 600, 600, 20);
-        menCalles.setVisible(true);
-        this.add(menCalles);
+        ponerJTextField(menCalles,10, 600, 600, 20);
         
         ruta2.setForeground(new java.awt.Color(102, 0, 51));
         ruta2.addActionListener(new java.awt.event.ActionListener() {
@@ -184,9 +179,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         menCalles.setText(str);
         paintComponents(g);
     }
-
-    boolean pintRuta = false;
-
+    
     @Override
     public void actionPerformed(ActionEvent arg0) {
         // TODO Auto-generated method stub

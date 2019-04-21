@@ -24,16 +24,13 @@ import java.util.*;
 
 public class Panel extends JPanel implements MouseListener, MouseMotionListener, ActionListener {
 
-    private JButton ruta2, ruta22;// = new JButton(" ok ");
-    private JTextField l1;
-    private JTextField l2;
-    private JLabel lusuario;
-    private JLabel lusuario2;
-    private Grafo g; //= new Mapa();
+    private JButton ruta2, ruta22;
+    private JTextField origen;
+    private JTextField destino;
+    private Grafo g;
     private int mapaCart[][];
     private LinkedList<Integer> path;
     int x0, y0, ascii;
-    private JLabel parques[];
     
     private JTextField menCalles;
     
@@ -41,7 +38,6 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     Scanner sc = new Scanner(new FileReader("Coordenadas.txt"));
 
     public Panel(Grafo g) throws Exception {
-        parques = new JLabel[6];
         this.g = g;
         ascii = 65;
         path = new LinkedList<Integer>();
@@ -49,17 +45,16 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         setLayout(null);
         addMouseListener(this);
         addMouseMotionListener(this);
-        //addActionListener(this);
         dibujarMenu();
         ponerPosicionMapa();
-
     }
     private void ponerJTextField(JTextField text, int x1, int y1, int x2, int y2){
         text.setBounds(x1, y1, x2, y2);
         text.setVisible(true);
         this.add(text);
     }
-    private void ponerJLabel(JLabel label, int x1, int y1, int x2, int y2, Color color){
+    private void ponerJLabel(String text, int x1, int y1, int x2, int y2, Color color){
+        JLabel label = new JLabel(text);
         label.setBounds(x1, y1, x2, y2);
         label.setVisible(true);
         label.setForeground(color);
@@ -68,27 +63,22 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     
     private void dibujarMenu() {
         String lisParques[] = {" 0   = Parque Lincold."," 58 = Jardin Botanico."," 59 = Parque de Educacion Vial."," 60 = Parque de la Familia."," 61 = Parque Mariscal Santa Cruz."," 62 = Parque Escuela."};
-        for(int i=0;i<parques.length;i++){
-            parques[i] = new JLabel(lisParques[i]);
-            ponerJLabel(parques[i],630, 480+(i*15), 200, 30, Color.WHITE);
+        for(int i=0;i<lisParques.length;i++){
+            ponerJLabel(lisParques[i], 630, 480+(i*15), 200, 30, Color.WHITE);
         }
-        l1 = new JTextField("");
-        ponerJTextField(l1, 610, 600, 75, 20);
+        origen = new JTextField("");
+        ponerJTextField(origen, 610, 600, 75, 20);
+        destino = new JTextField("");
+        ponerJTextField(destino, 690, 600, 75, 20);
 
-        l2 = new JTextField("");
-        ponerJTextField(l2, 690, 600, 75, 20);
-
-        lusuario = new JLabel("inicio");
-        ponerJLabel(lusuario, 610, 620, 100, 20, Color.WHITE);
-
-        lusuario2 = new JLabel("destino");
-        ponerJLabel(lusuario2, 690, 620, 100, 20, Color.WHITE);
+        ponerJLabel("inicio", 610, 620, 100, 20, Color.WHITE);
+        ponerJLabel("destino", 690, 620, 100, 20, Color.WHITE);
 
         ruta2 = new JButton();
         ruta2.setText(" ok ");
         ruta2.setBounds(/*450*/770, 600, 75, 20);
         add(ruta2);
-
+        
         menCalles = new JTextField("Sin Ruta");
         ponerJTextField(menCalles,10, 600, 600, 20);
         
@@ -119,8 +109,8 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        int inicio = Integer.parseInt(l1.getText());
-        int destino = Integer.parseInt(l2.getText());
+        int inicio = Integer.parseInt(origen.getText());
+        int destino = Integer.parseInt(this.destino.getText());
         path = g.algorithmBidirectional(inicio, destino);
         repaint();
     }

@@ -32,6 +32,8 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     private LinkedList<Integer> path;
     int x0, y0, ascii;
     
+    private JLabel BC;
+    
     private JTextField menCalles;
     
     
@@ -76,7 +78,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
 
         ruta2 = new JButton();
         ruta2.setText(" ok ");
-        ruta2.setBounds(/*450*/770, 600, 75, 20);
+        ruta2.setBounds(770, 600, 75, 20);
         add(ruta2);
         
         menCalles = new JTextField("Sin Ruta");
@@ -88,10 +90,21 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
                 jButton1ActionPerformed(evt);
             }
         });
+        
+        BC = new JLabel(" Av Ruben Dario "){
+            public void paintComponent(Graphics g){
+                Graphics2D gx = (Graphics2D) g;
+                gx.rotate(Math.toRadians(270), 100, 5);
+		BC.setBounds(540,250,200,100);         
+                BC.setForeground(Color.WHITE);
+		super.paintComponent(g);
+            }
+        };
+        ponerJLabel("Av America", 300, 40, 100, 20, Color.WHITE);
+        ponerJLabel("Av Peru", 180, 240, 100, 20, Color.WHITE);
     }
 
     private void ponerPosicionMapa() throws Exception {
-        //Scanner sc = new Scanner(new FileReader("Coordenas.txt"));
         int i = 0;
         while (true) {
             int a = sc.nextInt();
@@ -121,8 +134,9 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
 
     @Override
     public void paint(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, 860, 640);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(0, 0, 860, 640);
+        g.drawImage(((new ImageIcon("Fondo.PNG")).getImage()), -1, 0, this);
         g.setColor(Color.WHITE);
         
         for(int[] pos : mapaCart){

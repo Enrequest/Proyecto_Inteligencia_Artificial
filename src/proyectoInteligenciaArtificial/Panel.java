@@ -90,18 +90,6 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
                 jButton1ActionPerformed(evt);
             }
         });
-        
-        BC = new JLabel(" Av Ruben Dario "){
-            public void paintComponent(Graphics g){
-                Graphics2D gx = (Graphics2D) g;
-                gx.rotate(Math.toRadians(270), 100, 5);
-		BC.setBounds(540,250,200,100);         
-                BC.setForeground(Color.WHITE);
-		super.paintComponent(g);
-            }
-        };
-        ponerJLabel("Av America", 300, 40, 100, 20, Color.WHITE);
-        ponerJLabel("Av Peru", 180, 240, 100, 20, Color.WHITE);
     }
 
     private void ponerPosicionMapa() throws Exception {
@@ -136,7 +124,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
     public void paint(Graphics g) {
         //g.setColor(Color.BLACK);
         //g.fillRect(0, 0, 860, 640);
-        g.drawImage(((new ImageIcon("Fondo.PNG")).getImage()), -1, 0, this);
+        g.drawImage(((new ImageIcon("Fondo1.PNG")).getImage()),-1, -1, 856, 662, this);
         g.setColor(Color.WHITE);
         
         for(int[] pos : mapaCart){

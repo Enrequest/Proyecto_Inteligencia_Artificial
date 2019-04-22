@@ -108,7 +108,7 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
         }
         repaint();
     }
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         int inicio = Integer.parseInt(origen.getText());
         int destino = Integer.parseInt(this.destino.getText());
@@ -137,17 +137,6 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
             }
         }
         
-        Set<String> set = new LinkedHashSet<String>();//Aqui se guardan las calles recorridas
-        if (!path.isEmpty()) {
-            g.setColor(Color.RED);
-            for (int i = 0; i < path.size() - 1; i++) {
-                set.add(this.g.mapa[path.get(i)][path.get(i+1)]);
-                int[] aux1 = mapaCart[path.get(i)];
-                int[] aux2 = mapaCart[path.get(i+1)];
-                g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
-            }
-        }
-        
         for (int[] pos : mapaCart){
             int lincold = 0, botanico = 58, vial = 59, familia = 60, acuatico = 61, escuela = 62;
             if(pos[2]==lincold||pos[2]==botanico||pos[2]==vial||pos[2]==familia||pos[2]==acuatico||pos[2]==escuela){
@@ -163,6 +152,36 @@ public class Panel extends JPanel implements MouseListener, MouseMotionListener,
             }
         }
         
+        Set<String> set = new LinkedHashSet<String>();//Aqui se guardan las calles recorridas
+        if (!path.isEmpty()) {
+            for (int i = 0; i < path.size() - 1; i++) {
+                g.setColor(Color.RED);
+                set.add(this.g.mapa[path.get(i)][path.get(i+1)]);
+                int[] aux1 = mapaCart[path.get(i)];
+                int[] aux2 = mapaCart[path.get(i+1)];
+                g.drawLine(aux1[0], aux1[1], aux2[0], aux2[1]);
+                //int lincold = 0, botanico = 58, vial = 59, familia = 60, acuatico = 61, escuela = 62;
+                if(i!=0 && i!=path.size()-2){
+                    g.fillOval(aux1[0]-10, aux1[1]-10, 30, 30);
+                    g.setColor(Color.BLACK);
+                    g.drawString(""+aux1[2], aux1[0], aux1[1] + 10);
+                }else{
+                    if(i==0){
+                        g.setColor(Color.ORANGE);
+                        g.fillOval(aux1[0]-10, aux1[1]-10, 30, 30);
+                        g.setColor(Color.BLACK);
+                        g.drawString(""+aux1[2], aux1[0], aux1[1] + 10);
+                    }else{
+                        g.fillOval(aux1[0]-10, aux1[1]-10, 30, 30);
+                        g.setColor(Color.ORANGE);
+                        g.fillOval(aux2[0]-10, aux2[1]-10, 30, 30);
+                        g.setColor(Color.BLACK);
+                        g.drawString(""+aux1[2], aux1[0], aux1[1] + 10);
+                        g.drawString(""+aux2[2], aux2[0], aux2[1] + 10);
+                    }
+                }
+            }
+        }
         String str = "  ";
         for(String s: set){
             str+=s+", ";
